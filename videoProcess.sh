@@ -10,7 +10,7 @@ videodir=$1
 #range=" -t 5 " # only the first 5 seconds, for debugging
 audio=" -an "  # removes audio
 
-for videofile in $videodir/*.MP4; do
+for videofile in $videodir/*.??4; do
     [ -f "$videofile" ] || break
     echo "======[ Processing: " $videofile "]========"
     ffmpeg $range -i $videofile -vf vidstabdetect=shakiness=5:show=1 -f null - 
